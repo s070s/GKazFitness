@@ -1,0 +1,20 @@
+[
+  {
+    "UserId": 1,
+    "FirstName": "John",
+    "LastName": "Doe",
+    "Email": "john.doe@example.com",
+    "PasswordHash": "hashedpassword123",
+    "PhoneNumber": "6944452557",
+    "Role": false
+  },
+  {
+    "UserId": 2,
+    "FirstName": "Jane",
+    "LastName": "Smith",
+    "Email": "jane.smith@example.com",
+    "PasswordHash": "hashedpassword456",
+    "PhoneNumber": "6944456657",
+    "Role": true
+  }
+]

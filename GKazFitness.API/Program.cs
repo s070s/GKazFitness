@@ -1,9 +1,10 @@
+using GKazFitness.API.DatabaseClasses;
+using GKazFitness.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 #region Cors
 builder.Services.AddCors(options =>
@@ -16,8 +17,13 @@ builder.Services.AddCors(options =>
 });
 #endregion
 
+// Add Swagger services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add database configuration (inject ConnectionService)
+builder.Services.AddDatabaseConfiguration(builder.Configuration);
+builder.Services.AddScoped<UserService>();
 
 var app = builder.Build();
 
